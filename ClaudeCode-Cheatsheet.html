@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Code — Cheat-Sheet · AIISV</title>
+<style>
+  :root{ --bg:#0a0a0a; --card:#141414; --line:#2b2b2b; --ink:#ffffff; --muted:#b6b6b6;
+         --red:#DF2E28; --gold:#E9BF35; --green:#81BB42; --blue:#4A9BDC; --teal:#32C7A9; --orange:#FE801A; }
+  body.light{ --bg:#ffffff; --card:#f5f6f8; --line:#e0e2e6; --ink:#111418; --muted:#5a626c; }
+  *{ box-sizing:border-box; }
+  html{ font-size:21px; }  /* compact for one-page print */
+  body{ margin:0; padding:30px 26px 40px; background:var(--bg); color:var(--ink);
+        font-family:'Century Gothic','Futura','Avant Garde',sans-serif; }
+  .wrap{ max-width:1320px; margin:0 auto; }
+  header{ display:flex; align-items:center; gap:16px; border-bottom:2px solid var(--red); padding-bottom:16px; margin-bottom:22px; }
+  header svg{ width:58px; height:auto; flex:0 0 auto; }
+  .htxt{ flex:1; }
+  .htxt h1{ margin:0; font-size:1.7rem; letter-spacing:.5px; }
+  .htxt h1 span{ color:var(--red); }
+  .htxt p{ margin:.2rem 0 0; color:var(--muted); font-size:.86rem; }
+  .brand{ font-size:.62rem; letter-spacing:3px; color:var(--gold); text-transform:uppercase; }
+  .toggle{ border:1px solid var(--line); background:var(--card); color:var(--ink); border-radius:20px;
+           padding:.5rem 1rem; font:inherit; font-size:.78rem; cursor:pointer; }
+  .toggle:hover{ border-color:var(--red); }
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(360px,1fr)); gap:16px; }
+  .card{ background:var(--card); border:1px solid var(--line); border-left:3px solid var(--c); border-radius:9px;
+         padding:.8rem 1rem; break-inside:avoid; }
+  .card h2{ display:flex; align-items:baseline; gap:.5rem; margin:0 0 .35rem; font-size:.95rem; color:var(--ink); }
+  .card h2 .n{ color:var(--c); font-size:.72rem; font-weight:700; letter-spacing:1px; }
+  .card .intro{ display:block; font-size:.78rem; color:var(--muted); line-height:1.38; margin:0 0 .5rem; }
+  .card ul{ margin:0; padding:0; list-style:none; }
+  .card li{ position:relative; padding-left:.9rem; font-size:.76rem; color:var(--muted); line-height:1.36; margin:.22rem 0; }
+  .card li::before{ content:""; position:absolute; left:0; top:.5em; width:5px; height:5px; border-radius:50%; background:var(--c); }
+  .card li b{ color:var(--ink); font-weight:700; }
+  code{ font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace; font-size:.86em;
+        background:rgba(127,127,127,.16); border-radius:4px; padding:.04em .32em; color:var(--ink); white-space:nowrap; }
+  footer{ margin-top:26px; border-top:1px solid var(--line); padding-top:12px; display:flex; justify-content:space-between;
+          font-size:.62rem; color:var(--muted); flex-wrap:wrap; gap:8px; }
+  @media print{
+    body{ background:#fff !important; color:#111 !important; padding:0; }
+    :root{ --bg:#fff; --card:#f5f6f8; --line:#d8dade; --ink:#111; --muted:#444; }
+    .toggle{ display:none; }
+    .grid{ grid-template-columns:repeat(3,1fr); }
+    code{ background:#eceef1; }
+  }
+</style></head>
+<body class="dark"><div class="wrap">
+<header>
+  <svg viewBox="0 0 600 542" xmlns="http://www.w3.org/2000/svg"><defs>
+    <linearGradient id="cg" x1="35" y1="25" x2="553" y2="512" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffe98f"/><stop offset="0.38" stop-color="#f4b735"/><stop offset="0.67" stop-color="#d78a0c"/><stop offset="1" stop-color="#f0a011"/></linearGradient>
+    <linearGradient id="cw" x1="35" y1="107" x2="489" y2="514" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff"/><stop offset="0.52" stop-color="#d8d3ca"/><stop offset="1" stop-color="#f3f3f3"/></linearGradient></defs>
+    <g fill="url(#cg)"><path d="M 250 26 L 281 26 L 383 209 L 346 209 L 263 62 L 66 390 L 35 390 Z"/><path d="M 308 26 L 344 26 L 515 335 L 516 27 L 548 26 L 548 460 Z"/><path d="M 369 26 L 404 26 L 468 143 L 469 72 L 498 72 L 498 251 L 494 251 Z"/><path d="M 361 232 L 397 233 L 553 512 L 515 511 Z"/></g>
+    <path d="M 263 107 L 93 401 L 129 401 L 261 173 L 299 238 L 253 239 L 238 266 L 314 266 L 330 292 L 223 293 L 207 322 L 345 321 L 360 347 L 191 348 L 146 422 L 67 465 L 65 399 L 90 355 L 58 355 L 35 390 L 35 514 L 166 443 L 206 377 L 375 376 L 451 512 L 489 512 Z" fill="url(#cw)"/></svg>
+  <div class="htxt"><a href="index.html" style="display:inline-flex;align-items:center;gap:6px;margin-bottom:8px;color:#FF5A4D;text-decoration:none;font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-family:'Century Gothic',Futura,sans-serif">&larr; AIISV Reference Library</a><div class="brand">AI Institute Silicon Valley</div><h1>Claude Code — <span>Cheat-Sheet</span></h1><p>Anthropic's agentic coding tool · for the AI SDLC course</p></div>
+  <button class="toggle" onclick="document.body.classList.toggle('light');document.body.classList.toggle('dark')">◐ Dark / Light</button>
+</header>
+
+<div class="grid">
+
+  <div class="card" style="--c:var(--blue)">
+    <h2><span class="n">01</span> At a glance</h2>
+    <span class="intro">Claude Code is Anthropic's agentic coding tool — <b>text in &rarr; actions performed</b>.</span>
+    <ul>
+      <li>It reads/edits files, runs commands &amp; tests — not just chat.</li>
+      <li>Surfaces: <b>CLI</b> (terminal) · <b>IDE</b> (VS Code, JetBrains) · <b>Desktop app</b> (Mac/Windows) · <b>Web</b> (<code>claude.ai/code</code>).</li>
+      <li>You steer &amp; approve — the agent does the work.</li>
+    </ul>
+  </div>
+
+  <div class="card" style="--c:var(--gold)">
+    <h2><span class="n">02</span> The agent loop</h2>
+    <span class="intro"><b>Think &rarr; Act &rarr; Observe</b>, repeated until the task is done.</span>
+    <ul>
+      <li><b>Plan Mode</b>: it proposes a plan (read-only) before acting.</li>
+      <li>You review and approve each step.</li>
+    </ul>
+  </div>
+
+  <div class="card" style="--c:var(--red)">
+    <h2><span class="n">03</span> <code>CLAUDE.md</code> — the constitution</h2>
+    <span class="intro">Project rules/memory at the repo root, auto-loaded every session.</span>
+    <ul>
+      <li>Holds: standards, stack, conventions, key commands, guardrails.</li>
+      <li>Also a user-level <code>~/.claude/CLAUDE.md</code> (applies everywhere).</li>
+      <li>Tip: press <code>#</code> to quickly add a memory.</li>
+    </ul>
+  </div>
+
+  <div class="card" style="--c:var(--teal)">
+    <h2><span class="n">04</span> Memory</h2>
+    <span class="intro">Persistence across sessions, so the agent doesn't relearn each time.</span>
+    <ul>
+      <li>Project <code>CLAUDE.md</code>, user memory, and a file-based memory the agent can recall.</li>
+      <li>It remembers decisions &amp; conventions instead of starting fresh.</li>
+    </ul>
+  </div>
+
+  <div class="card" style="--c:var(--green)">
+    <h2><span class="n">05</span> Skills (<code>SKILL.md</code>)</h2>
+    <span class="intro">Reusable capabilities packaged as a folder with a <code>SKILL.md</code> file.</span>
+    <ul>
+      <li>Frontmatter: <code>name</code>, <code>description</code>; body: instructions; optional scripts/assets.</li>
+      <li>Auto-invoked when the description matches the task.</li>
+      <li>Live in <code>.claude/skills/</code>.</li>
+    </ul>
+  </div>
+
+  <div class="card" style="--c:var(--orange)">
+    <h2><span class="n">06</span> Subagents</h2>
+    <span class="intro">Spawn parallel/independent agents for fan-out work.</span>
+    <ul>
+      <li>Good for search, review, multi-file edits — keeps the main thread focused.</li>
+      <li>Custom agent types live in <code>.claude/agents/</code>.</li>
+    </ul>
+  </div>
+
+  <div class="card" style="--c:var(--blue)">
+    <h2><span class="n">07</span> Hooks</h2>
+    <span class="intro">Run shell commands on lifecycle events via <code>settings.json</code>.</span>
+    <ul>
+      <li>Events e.g. <code>PreToolUse</code>, <code>PostToolUse</code>, <code>Stop</code>.</li>
+      <li>Automate linting, formatting, guards.</li>
+      <li>The harness runs them, not the model.</li>
+    </ul>
+  </div>
+
+  <div class="card" style="--c:var(--gold)">
+    <h2><span class="n">08</span> MCP (Model Context Protocol)</h2>
+    <span class="intro">Connect external tools &amp; data via MCP servers — <b>"USB-C for AI."</b></span>
+    <ul>
+      <li>Configure in <code>.mcp.json</code> / settings.</li>
+      <li>The connected tools become available to the agent.</li>
+    </ul>
+  </div>
+
+  <div class="card" style="--c:var(--red)">
+    <h2><span class="n">09</span> Slash commands</h2>
+    <span class="intro">Type-ahead commands inside a session.</span>
+    <ul>
+      <li><code>/help</code> · <code>/clear</code> · <code>/model</code> · <code>/config</code> · <code>/agents</code> · <code>/hooks</code> · <code>/permissions</code> · <code>/init</code> · <code>/review</code></li>
+      <li>Custom commands = Markdown files in <code>.claude/commands/</code>.</li>
+    </ul>
+  </div>
+
+  <div class="card" style="--c:var(--teal)">
+    <h2><span class="n">10</span> Permissions &amp; safety</h2>
+    <span class="intro">Permission modes: prompt / allow / deny.</span>
+    <ul>
+      <li>Allowlists in <code>settings.json</code>.</li>
+      <li><b>Plan Mode is read-only</b>; sandboxing for risky commands.</li>
+      <li>Approve diffs before they land.</li>
+    </ul>
+  </div>
+
+  <div class="card" style="--c:var(--green)">
+    <h2><span class="n">11</span> Reviewing work</h2>
+    <span class="intro">Review <b>focused diffs</b>, not 1000-line dumps.</span>
+    <ul>
+      <li>Accept/reject changes.</li>
+      <li><code>/code-review</code> for a deeper pass.</li>
+      <li>The human verifies.</li>
+    </ul>
+  </div>
+
+  <div class="card" style="--c:var(--orange)">
+    <h2><span class="n">12</span> <code>AGENTS.md</code></h2>
+    <span class="intro">An emerging <b>cross-tool</b> standard for agent configuration.</span>
+    <ul>
+      <li>Shared across coding agents.</li>
+      <li>Complements <code>CLAUDE.md</code>.</li>
+    </ul>
+  </div>
+
+</div>
+
+<footer><span>Copyright © 2026 AI Institute Silicon Valley — Confidential · v1.1-beta</span><span>Claude Code Cheat-Sheet · for the AI SDLC course · one of several AIISV reference cards.</span></footer>
+</div></body></html>

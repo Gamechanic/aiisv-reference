@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AIISV Reference — AI vocabulary, Claude Code &amp; the visual explainer library</title>
+<style>
+  :root{ --bg:#0b0b0b; --panel:#141414; --line:#2b2b2b; --ink:#fff; --muted:#c4c4c4; --dim:#8a8a8a;
+         --red:#DF2E28; --red-ui:#FF5A4D; --gold:#E9BF35; --green:#81BB42; --blue:#5AA9EC; --teal:#3AD0B0; }
+  :root[data-theme="light"]{ --bg:#f4f4f5; --panel:#fff; --line:#e2e2e5; --ink:#111; --muted:#4a4a4f; --dim:#77777d; }
+  *{ box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); margin:0; padding:30px 24px 64px;
+        font-family:'Century Gothic','Futura','Avant Garde',sans-serif; }
+  .wrap{ max-width:1040px; margin:0 auto; }
+  .topbar{ display:flex; align-items:center; gap:14px; margin-bottom:6px; }
+  .topbar svg{ width:46px; height:auto; flex:0 0 auto; }
+  .brandname{ font-weight:800; letter-spacing:.5px; font-size:1.02rem; }
+  .brandname small{ display:block; font-weight:400; color:var(--dim); font-size:.68rem; letter-spacing:2px; text-transform:uppercase; margin-top:2px; }
+  .spacer{ flex:1; }
+  .ctrl{ background:var(--panel); color:var(--ink); border:1px solid var(--line); border-radius:8px;
+         padding:.4rem .6rem; font-size:1rem; cursor:pointer; line-height:1; }
+  header.hero{ border-bottom:1px solid var(--line); padding:26px 0 26px; margin-bottom:26px; }
+  .eyebrow{ font-size:.72rem; letter-spacing:3px; text-transform:uppercase; color:var(--gold); font-weight:800; }
+  h1{ font-size:clamp(1.8rem,4vw,2.7rem); margin:.35rem 0 .5rem; letter-spacing:-.5px; }
+  .lede{ color:var(--muted); font-size:clamp(.95rem,1.7vw,1.1rem); line-height:1.55; max-width:70ch; }
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:16px; margin:6px 0 30px; }
+  a.card{ display:flex; flex-direction:column; text-decoration:none; color:inherit; background:var(--panel);
+    border:1px solid var(--line); border-top:3px solid var(--c); border-radius:13px; padding:18px 18px 16px;
+    box-shadow:0 8px 22px rgba(0,0,0,.28); transition:transform .16s, border-color .16s, box-shadow .16s; }
+  a.card:hover{ transform:translateY(-3px); box-shadow:0 16px 40px rgba(0,0,0,.4); }
+  .ci{ font-size:1.7rem; line-height:1; margin-bottom:9px; }
+  .ct{ font-weight:800; font-size:1.12rem; }
+  .cd{ color:var(--muted); font-size:.9rem; line-height:1.5; margin-top:6px; flex:1; }
+  .cmeta{ margin-top:12px; display:flex; align-items:center; gap:8px; font-size:.72rem; color:var(--dim); font-weight:700; letter-spacing:.4px; }
+  .tag{ text-transform:uppercase; border:1px solid var(--line); border-radius:999px; padding:2px 9px; }
+  .open{ color:var(--c); font-weight:800; }
+  .ext .open::after{ content:" ↗"; }
+  .note{ background:var(--panel); border:1px solid var(--line); border-left:3px solid var(--gold);
+         border-radius:11px; padding:14px 16px; color:var(--muted); font-size:.86rem; line-height:1.55; }
+  .note b{ color:var(--ink); }
+  footer{ margin-top:30px; border-top:1px solid var(--line); padding-top:14px; color:var(--dim); font-size:.74rem;
+          display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+  @media(max-width:640px){ .grid{ grid-template-columns:1fr; } }
+</style>
+<script>(function(){try{var t=localStorage.getItem('aiisv-ref-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body><div class="wrap">
+
+  <div class="topbar">
+    <img src="assets/aiisv-logo.svg" alt="AIISV" width="46" height="42">
+    <div class="brandname">AI Institute Silicon Valley<small>Reference Library</small></div>
+    <span class="spacer"></span>
+    <button id="themebtn" class="ctrl" aria-label="Toggle light / dark" title="Toggle light / dark">🌙</button>
+  </div>
+
+  <header class="hero">
+    <div class="eyebrow">AIISV · AI SDLC</div>
+    <h1>Reference Library</h1>
+    <p class="lede">Plain-language references that travel with the AI-SDLC course — the vocabulary you'll hear all
+      day, the Claude Code moves worth memorising, and the visual explainer gallery. Open any card; nothing here
+      needs an account.</p>
+  </header>
+
+  <div class="grid">
+
+    <a class="card" style="--c:var(--blue)" href="AI-Vocabulary-Cheatsheet.html">
+      <div class="ci">🔤</div>
+      <div class="ct">AI Vocabulary &amp; Acronyms</div>
+      <div class="cd">~45 terms in plain language — LLM, RAG, MCP, A2A, agents, evals and the rest — the words you'll
+        hear across the sessions, each in a sentence you can repeat.</div>
+      <div class="cmeta"><span class="tag">Cheat-sheet</span><span class="open">Open</span></div>
+    </a>
+
+    <a class="card" style="--c:var(--red)" href="ClaudeCode-Cheatsheet.html">
+      <div class="ci">⌨️</div>
+      <div class="ct">Claude Code Cheat-Sheet</div>
+      <div class="cd">The agentic coding tool at a glance — the loop, <code>CLAUDE.md</code>, skills, subagents,
+        plan mode, hooks, MCP and permissions. The moves that make you fast, kept safe.</div>
+      <div class="cmeta"><span class="tag">Cheat-sheet</span><span class="open">Open</span></div>
+    </a>
+
+    <a class="card ext" style="--c:var(--teal)" href="https://gamechanic.github.io/ai-infographics-site/" target="_blank" rel="noopener">
+      <div class="ci">🖼️</div>
+      <div class="ct">Visual Explainer Library</div>
+      <div class="cd">A live gallery of AI / AI-SDLC infographics — evaluations, observability, agents, deployment,
+        cost and more. A <b>separate gallery</b> that opens in a new tab — click any thumbnail for the full
+        animated poster, downloadable as <b>.gif</b> or <b>.png</b>.</div>
+      <div class="cmeta"><span class="tag">Live gallery</span><span class="open">Open in a new tab</span></div>
+    </a>
+
+  </div>
+
+  <div class="note">🚧 <b>Temporary home.</b> This is a staging site for the AIISV reference material while it's
+    consolidated; the infographics live in their own gallery (linked above). Contents may move to a permanent
+    home later — bookmark the individual pages you rely on rather than deep-linking paths.</div>
+
+</div>
+<footer>
+  <span>© 2026 AI Institute Silicon Valley · reference material</span>
+  <span>AI SDLC · plain-language first</span>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var r=document.documentElement, b=document.getElementById('themebtn');
+  function paint(){ b.textContent = r.getAttribute('data-theme')==='light' ? '☀️' : '🌙'; }
+  paint();
+  b.addEventListener('click',function(){
+    var n = r.getAttribute('data-theme')==='light' ? 'dark' : 'light';
+    r.setAttribute('data-theme', n);
+    try{ localStorage.setItem('aiisv-ref-theme', n); }catch(e){}
+    paint();
+  });
+});
+</script>
+</body>
+</html>

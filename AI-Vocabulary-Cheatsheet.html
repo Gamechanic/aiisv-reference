@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Vocabulary — Cheatsheet · AIISV</title>
+<style>
+  :root{ --bg:#0a0a0a; --card:#141414; --line:#2b2b2b; --ink:#ffffff; --muted:#b6b6b6;
+         --red:#DF2E28; --gold:#E9BF35; --green:#81BB42; --blue:#4A9BDC; --teal:#32C7A9; --orange:#FE801A; }
+  body.light{ --bg:#ffffff; --card:#f5f6f8; --line:#e0e2e6; --ink:#111418; --muted:#5a626c; }
+  *{ box-sizing:border-box; }
+  html{ font-size:24px; }  /* ~1.5× larger type */
+  body{ margin:0; padding:30px 26px 40px; background:var(--bg); color:var(--ink);
+        font-family:'Century Gothic','Futura','Avant Garde',sans-serif; }
+  .wrap{ max-width:1320px; margin:0 auto; }
+  header{ display:flex; align-items:center; gap:16px; border-bottom:2px solid var(--red); padding-bottom:16px; margin-bottom:22px; }
+  header svg{ width:58px; height:auto; flex:0 0 auto; }
+  .htxt{ flex:1; }
+  .htxt h1{ margin:0; font-size:1.7rem; letter-spacing:.5px; }
+  .htxt h1 span{ color:var(--red); }
+  .htxt p{ margin:.2rem 0 0; color:var(--muted); font-size:.86rem; }
+  .brand{ font-size:.62rem; letter-spacing:3px; color:var(--gold); text-transform:uppercase; }
+  .toggle{ border:1px solid var(--line); background:var(--card); color:var(--ink); border-radius:20px;
+           padding:.5rem 1rem; font:inherit; font-size:.78rem; cursor:pointer; }
+  .toggle:hover{ border-color:var(--red); }
+  section{ margin:0 0 18px; break-inside:avoid; }
+  .sec{ display:flex; align-items:center; gap:.6rem; font-size:.74rem; letter-spacing:2px; text-transform:uppercase;
+        font-weight:700; color:var(--c); margin:0 0 10px; }
+  .sec::before{ content:""; width:14px; height:14px; border-radius:4px; background:var(--c); }
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(360px,1fr)); gap:16px; }
+  .term{ background:var(--card); border:1px solid var(--line); border-left:3px solid var(--c); border-radius:9px; padding:.8rem 1rem; }
+  .term b{ display:block; font-size:.92rem; color:var(--ink); }
+  .term b em{ color:var(--c); font-style:normal; font-size:.72rem; font-weight:400; }
+  .term span{ display:block; font-size:.78rem; color:var(--muted); line-height:1.38; margin-top:.18rem; }
+  footer{ margin-top:26px; border-top:1px solid var(--line); padding-top:12px; display:flex; justify-content:space-between;
+          font-size:.62rem; color:var(--muted); flex-wrap:wrap; gap:8px; }
+  @media print{
+    body{ background:#fff !important; color:#111 !important; padding:0; }
+    :root{ --bg:#fff; --card:#f5f6f8; --line:#d8dade; --ink:#111; --muted:#444; }
+    .toggle{ display:none; }
+    .grid{ grid-template-columns:repeat(3,1fr); }
+  }
+  /* infographic cross-links: a term with a matching poster gets a picture icon that deep-links to it */
+  .term{ position:relative; }
+  .term:has(.iglink) > b{ padding-right:1.7rem; }
+  .iglink{ position:absolute; top:.6rem; right:.6rem; font-size:.82rem; line-height:1; text-decoration:none; opacity:.72; border:1px solid var(--line); border-radius:6px; padding:.14rem .34rem; }
+  .iglink:hover{ opacity:1; border-color:var(--c); background:color-mix(in srgb,var(--c) 14%,transparent); }
+</style></head>
+<body class="dark"><div class="wrap">
+<header>
+  <svg viewBox="0 0 600 542" xmlns="http://www.w3.org/2000/svg"><defs>
+    <linearGradient id="cg" x1="35" y1="25" x2="553" y2="512" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffe98f"/><stop offset="0.38" stop-color="#f4b735"/><stop offset="0.67" stop-color="#d78a0c"/><stop offset="1" stop-color="#f0a011"/></linearGradient>
+    <linearGradient id="cw" x1="35" y1="107" x2="489" y2="514" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff"/><stop offset="0.52" stop-color="#d8d3ca"/><stop offset="1" stop-color="#f3f3f3"/></linearGradient></defs>
+    <g fill="url(#cg)"><path d="M 250 26 L 281 26 L 383 209 L 346 209 L 263 62 L 66 390 L 35 390 Z"/><path d="M 308 26 L 344 26 L 515 335 L 516 27 L 548 26 L 548 460 Z"/><path d="M 369 26 L 404 26 L 468 143 L 469 72 L 498 72 L 498 251 L 494 251 Z"/><path d="M 361 232 L 397 233 L 553 512 L 515 511 Z"/></g>
+    <path d="M 263 107 L 93 401 L 129 401 L 261 173 L 299 238 L 253 239 L 238 266 L 314 266 L 330 292 L 223 293 L 207 322 L 345 321 L 360 347 L 191 348 L 146 422 L 67 465 L 65 399 L 90 355 L 58 355 L 35 390 L 35 514 L 166 443 L 206 377 L 375 376 L 451 512 L 489 512 Z" fill="url(#cw)"/></svg>
+  <div class="htxt"><a href="index.html" style="display:inline-flex;align-items:center;gap:6px;margin-bottom:8px;color:#FF5A4D;text-decoration:none;font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-family:'Century Gothic',Futura,sans-serif">&larr; AIISV Reference Library</a><div class="brand">AI Institute Silicon Valley</div><h1>AI Vocabulary — <span>Cheatsheet</span></h1><p>The words behind LLMs, RAG, Agents, MCP &amp; modern AI systems · v1.1-beta · 2026 · keep as a reference</p></div>
+  <button class="toggle" onclick="document.body.classList.toggle('light');document.body.classList.toggle('dark')">◐ Dark / Light</button>
+</header>
+
+<section><div class="sec" style="--c:var(--blue)">Foundations — the building blocks</div><div class="grid">
+  <div class="term" style="--c:var(--blue)"><b>Artificial Intelligence <em>AI</em></b><span>Machines doing things that used to need human intelligence — deciding, recognising, generating.</span></div>
+  <div class="term" style="--c:var(--blue)"><b>Machine Learning <em>ML</em></b><span>AI that learns patterns from data instead of being hand-coded with rules.</span></div>
+  <div class="term" style="--c:var(--blue)"><b>Deep Learning</b><span>ML using multi-layer neural networks; powers modern vision, speech and language.</span></div>
+  <div class="term" style="--c:var(--blue)"><b>Neural Network</b><span>Connected "neurons" in layers, loosely modelled on the brain, that learn by adjusting weights.</span></div>
+  <div class="term" style="--c:var(--blue)"><b>Generative AI</b><span>AI that <i>creates</i> new content — text, images, audio, video, code — not just sorts or scores it.</span></div>
+</div></section>
+
+<section><div class="sec" style="--c:var(--red)">The model &amp; language</div><div class="grid">
+  <div class="term" style="--c:var(--red)"><b>Large Language Model <em>LLM</em></b><span>A transformer trained on huge text to predict the next token; the engine behind ChatGPT, Claude.</span></div>
+  <div class="term" style="--c:var(--red)"><b>Small Language Model <em>SLM</em></b><span>A smaller, cheaper, faster model tuned for speed, cost, or a specific task.</span></div>
+  <div class="term" style="--c:var(--red)"><b>Model</b><span>The trained system (the weights) that makes predictions or generates content.</span></div>
+  <div class="term" style="--c:var(--red)"><b>Tokens</b><span>The chunks of text a model reads/writes — roughly words or word-pieces ("playing" → "play"+"ing").</span></div>
+  <div class="term" style="--c:var(--red)"><b>Context window</b><span>The model's working memory — the max tokens it can consider at once (input + output). Finite.</span></div>
+  <div class="term" style="--c:var(--red)"><b>Temperature</b><span>The creativity dial — low = predictable/consistent, high = varied/creative.</span></div>
+  <div class="term" style="--c:var(--red)"><b>Hallucination</b><span>A confident but wrong answer — the model optimises for plausible text, not truth, and never self-checks.</span></div>
+  <div class="term" style="--c:var(--red)"><b>Prompt</b><span>The instruction or input you give the model to get a response.</span></div>
+  <div class="term" style="--c:var(--red)"><b>Prompt engineering</b><span>Shaping the prompt — role, examples, format, steps — so the model gives better, more useful output.</span></div>
+  <div class="term" style="--c:var(--red)"><b>Chain-of-thought <em>CoT</em></b><span>Prompting the model to reason in steps before answering; improves logic and maths.</span></div>
+</div></section>
+
+<section><div class="sec" style="--c:var(--orange)">Training the model</div><div class="grid">
+  <div class="term" style="--c:var(--orange)"><b>Dataset</b><span>A collection of data used to train or test a model.</span></div>
+  <div class="term" style="--c:var(--orange)"><b>Data training</b><span>Feeding data to a model so it learns patterns and behaviours.</span></div>
+  <div class="term" style="--c:var(--orange)"><b>Fine-tuning</b><span>Further-training a pretrained model on a smaller, focused dataset to specialise it.</span></div>
+  <div class="term" style="--c:var(--orange)"><b>RLHF</b><span>Reinforcement Learning from Human Feedback — tuning with human preferences so it's helpful and safe.</span></div>
+</div></section>
+
+<section><div class="sec" style="--c:var(--teal)">Knowledge &amp; retrieval (RAG)</div><div class="grid">
+  <div class="term" style="--c:var(--teal)"><b>RAG</b><a class="iglink" href="https://gamechanic.github.io/ai-infographics-site/rag-poster.html" target="_blank" rel="noopener" title="See the infographic →">🖼️</a><span>Retrieval-Augmented Generation — search your documents first, then answer grounded in them. The common fix for hallucination.</span></div>
+  <div class="term" style="--c:var(--teal)"><b>Embeddings</b><a class="iglink" href="https://gamechanic.github.io/ai-infographics-site/rag-poster.html" target="_blank" rel="noopener" title="See the infographic →">🖼️</a><span>Numeric "meaning" vectors for text; similar meanings sit close together — enabling search by meaning.</span></div>
+  <div class="term" style="--c:var(--teal)"><b>Vector database</b><span>Stores embeddings and finds the most similar — semantic search (Pinecone, Weaviate, pgvector).</span></div>
+  <div class="term" style="--c:var(--teal)"><b>Chunking</b><a class="iglink" href="https://gamechanic.github.io/ai-infographics-site/chunking-metadata-poster.html" target="_blank" rel="noopener" title="See the infographic →">🖼️</a><span>Splitting documents into smaller searchable pieces before embedding them.</span></div>
+  <div class="term" style="--c:var(--teal)"><b>Hybrid search</b><a class="iglink" href="https://gamechanic.github.io/ai-infographics-site/advanced-rag-poster.html" target="_blank" rel="noopener" title="See the infographic →">🖼️</a><span>Combining keyword search with semantic (vector) search for better recall.</span></div>
+  <div class="term" style="--c:var(--teal)"><b>Reranking</b><a class="iglink" href="https://gamechanic.github.io/ai-infographics-site/advanced-rag-poster.html" target="_blank" rel="noopener" title="See the infographic →">🖼️</a><span>Re-sorting retrieved results by true usefulness before passing them to the model.</span></div>
+</div></section>
+
+<section><div class="sec" style="--c:var(--gold)">Action &amp; agents</div><div class="grid">
+  <div class="term" style="--c:var(--gold)"><b>Tool calling</b><span>Letting the model use external tools/systems — run code, query a DB, call an API.</span></div>
+  <div class="term" style="--c:var(--gold)"><b>Function calling</b><span>The model emitting structured arguments to invoke a specific function.</span></div>
+  <div class="term" style="--c:var(--gold)"><b>Memory</b><a class="iglink" href="https://gamechanic.github.io/ai-infographics-site/agent-memory-poster.html" target="_blank" rel="noopener" title="See the infographic →">🖼️</a><span>Storing useful information across steps or sessions so an agent doesn't forget.</span></div>
+  <div class="term" style="--c:var(--gold)"><b>AI agent</b><a class="iglink" href="https://gamechanic.github.io/ai-infographics-site/agent-loop-poster.html" target="_blank" rel="noopener" title="See the infographic →">🖼️</a><span>An LLM that takes actions in a loop (Think → Act → Observe) until a task is done — not just answers.</span></div>
+  <div class="term" style="--c:var(--gold)"><b>Agentic AI</b><a class="iglink" href="https://gamechanic.github.io/ai-infographics-site/agent-loop-poster.html" target="_blank" rel="noopener" title="See the infographic →">🖼️</a><span>Self-directed AI that plans, reasons and executes multi-step tasks toward a goal.</span></div>
+  <div class="term" style="--c:var(--gold)"><b>Agentic workflow</b><span>A structured flow where the AI plans and executes steps, usually with human checkpoints.</span></div>
+  <div class="term" style="--c:var(--gold)"><b>Multi-agent system</b><a class="iglink" href="https://gamechanic.github.io/ai-infographics-site/multi-agent-orchestration-poster.html" target="_blank" rel="noopener" title="See the infographic →">🖼️</a><span>Several specialised agents collaborating and coordinating on a task.</span></div>
+</div></section>
+
+<section><div class="sec" style="--c:var(--green)">Connecting agents — protocols</div><div class="grid">
+  <div class="term" style="--c:var(--green)"><b>MCP</b><a class="iglink" href="https://gamechanic.github.io/ai-infographics-site/mcp-poster.html" target="_blank" rel="noopener" title="See the infographic →">🖼️</a><span>Model Context Protocol — open standard connecting agents to tools, data &amp; context. "USB-C for AI" (Anthropic).</span></div>
+  <div class="term" style="--c:var(--green)"><b>A2A</b><a class="iglink" href="https://gamechanic.github.io/ai-infographics-site/a2a-poster.html" target="_blank" rel="noopener" title="See the infographic →">🖼️</a><span>Agent-to-Agent — a protocol for agents to discover each other and coordinate (Google).</span></div>
+  <div class="term" style="--c:var(--green)"><b>A2UI</b><span>Agent-to-User-Interface — an emerging protocol for agents to render and drive UIs.</span></div>
+</div></section>
+
+<section><div class="sec" style="--c:var(--blue)">Production &amp; operations</div><div class="grid">
+  <div class="term" style="--c:var(--blue)"><b>Planner</b><span>Breaks a goal into smaller, ordered steps.</span></div>
+  <div class="term" style="--c:var(--blue)"><b>Evaluator</b><a class="iglink" href="https://gamechanic.github.io/ai-infographics-site/ai-evaluation-poster.html" target="_blank" rel="noopener" title="See the infographic →">🖼️</a><span>Checks whether the output is good enough — often an "LLM-as-judge."</span></div>
+  <div class="term" style="--c:var(--blue)"><b>Guardrails</b><a class="iglink" href="https://gamechanic.github.io/ai-infographics-site/human-in-the-loop-poster.html" target="_blank" rel="noopener" title="See the infographic →">🖼️</a><span>Safety, policy and quality controls that constrain what the AI can do or say.</span></div>
+  <div class="term" style="--c:var(--blue)"><b>Observability</b><a class="iglink" href="https://gamechanic.github.io/ai-infographics-site/agentic-observability-poster.html" target="_blank" rel="noopener" title="See the infographic →">🖼️</a><span>Logging, tracing and monitoring of AI behaviour in production.</span></div>
+  <div class="term" style="--c:var(--blue)"><b>Automation</b><span>Using AI to perform repetitive tasks without human input.</span></div>
+</div></section>
+
+<section><div class="sec" style="--c:var(--teal)">Applied AI</div><div class="grid">
+  <div class="term" style="--c:var(--teal)"><b>Natural Language Processing <em>NLP</em></b><span>AI that understands and works with human language — text and speech.</span></div>
+  <div class="term" style="--c:var(--teal)"><b>Computer Vision</b><span>AI that sees and understands images and video.</span></div>
+  <div class="term" style="--c:var(--teal)"><b>Voice AI</b><span>AI that recognises and responds to spoken language.</span></div>
+  <div class="term" style="--c:var(--teal)"><b>Diffusion models</b><span>The tech behind most image generators — learn to remove noise, turning randomness into an image.</span></div>
+  <div class="term" style="--c:var(--teal)"><b>Personalization</b><span>AI tailoring content, recommendations or experiences to an individual.</span></div>
+</div></section>
+
+<section><div class="sec" style="--c:var(--red)">Responsible AI</div><div class="grid">
+  <div class="term" style="--c:var(--red)"><b>AI Ethics</b><span>Rules and practices ensuring AI is fair, transparent and used responsibly.</span></div>
+</div></section>
+
+<footer><span>© 2026 AI Institute Silicon Valley · AI Vocabulary Cheatsheet v1.1-beta</span><span>Maintained separately from the course — updated as the field moves. One of several AIISV reference cards.</span></footer>
+</div></body></html>
