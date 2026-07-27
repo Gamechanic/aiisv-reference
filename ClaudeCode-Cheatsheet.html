@@ -133,10 +133,14 @@
 
   <div class="card" style="--c:var(--red)">
     <h2><span class="n">09</span> Slash commands</h2>
-    <span class="intro">Type-ahead commands inside a session.</span>
+    <span class="intro">Typed in a session. A slash only <i>does</i> something if it's <b>built-in</b> or one <b>you created</b> — everything else is just a plain-English ask.</span>
     <ul>
-      <li><code>/help</code> · <code>/clear</code> · <code>/model</code> · <code>/config</code> · <code>/agents</code> · <code>/hooks</code> · <code>/permissions</code> · <code>/init</code> · <code>/review</code></li>
-      <li>Custom commands = Markdown files in <code>.claude/commands/</code>.</li>
+      <li><b>Session &amp; context</b> · <code>/clear</code> · <code>/compact</code> · <code>/context</code> · <code>/resume</code> · <code>/fork</code></li>
+      <li><b>Set up</b> · <code>/init</code> · <code>/config</code> · <code>/model</code> · <code>/effort</code> · <code>/add-dir</code></li>
+      <li><b>Extend</b> · <code>/agents</code> · <code>/hooks</code> · <code>/mcp</code> · <code>/memory</code> · <code>/permissions</code></li>
+      <li><b>Work</b> · <code>/diff</code> · <code>/copy</code> · <code>/export</code> · <code>/cost</code></li>
+      <li><b>Bundled skills</b> (ship in the box) · <code>/code-review</code> · <code>/debug</code> · <code>/doctor</code> — prompts Claude can also trigger on its own.</li>
+      <li><b>Custom = skills</b> — author your own: <code>.claude/commands/deploy.md</code> <i>or</i> <code>.claude/skills/deploy/SKILL.md</code> both give you <code>/deploy</code>. They've merged; skills is the modern path (see Session 2).</li>
     </ul>
   </div>
 
