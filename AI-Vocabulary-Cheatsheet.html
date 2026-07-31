@@ -43,7 +43,7 @@
   .iglink{ position:absolute; top:.6rem; right:.6rem; font-size:.82rem; line-height:1; text-decoration:none; opacity:.72; border:1px solid var(--line); border-radius:6px; padding:.14rem .34rem; }
   .iglink:hover{ opacity:1; border-color:var(--c); background:color-mix(in srgb,var(--c) 14%,transparent); }
 </style></head>
-<body class="dark"><div class="wrap">
+<body class="dark"><script>(function(){var K="aiisv-theme",v=null;try{v=localStorage.getItem(K)}catch(e){}var light=v?v==="light":(window.matchMedia&&matchMedia("(prefers-color-scheme:light)").matches);document.body.classList.toggle("light",light);document.body.classList.toggle("dark",!light);})();</script><div class="wrap">
 <header>
   <a href="https://aiisv.org" target="_blank" rel="noopener" title="AI Institute Silicon Valley — aiisv.org" style="display:inline-flex"><svg viewBox="0 0 600 542" xmlns="http://www.w3.org/2000/svg"><defs>
     <linearGradient id="cg" x1="35" y1="25" x2="553" y2="512" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffe98f"/><stop offset="0.38" stop-color="#f4b735"/><stop offset="0.67" stop-color="#d78a0c"/><stop offset="1" stop-color="#f0a011"/></linearGradient>
@@ -51,7 +51,7 @@
     <g fill="url(#cg)"><path d="M 250 26 L 281 26 L 383 209 L 346 209 L 263 62 L 66 390 L 35 390 Z"/><path d="M 308 26 L 344 26 L 515 335 L 516 27 L 548 26 L 548 460 Z"/><path d="M 369 26 L 404 26 L 468 143 L 469 72 L 498 72 L 498 251 L 494 251 Z"/><path d="M 361 232 L 397 233 L 553 512 L 515 511 Z"/></g>
     <path d="M 263 107 L 93 401 L 129 401 L 261 173 L 299 238 L 253 239 L 238 266 L 314 266 L 330 292 L 223 293 L 207 322 L 345 321 L 360 347 L 191 348 L 146 422 L 67 465 L 65 399 L 90 355 L 58 355 L 35 390 L 35 514 L 166 443 L 206 377 L 375 376 L 451 512 L 489 512 Z" fill="url(#cw)"/></svg></a>
   <div class="htxt"><a href="index.html" style="display:inline-flex;align-items:center;gap:6px;margin-bottom:8px;color:#FF5A4D;text-decoration:none;font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-family:'Century Gothic',Futura,sans-serif">&larr; AIISV Reference Library</a><a class="brand" href="https://aiisv.org" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">AI Institute Silicon Valley</a><h1>AI Vocabulary — <span>Cheatsheet</span></h1><p>The words behind LLMs, RAG, Agents, MCP &amp; modern AI systems · v1.1-beta · 2026 · keep as a reference</p></div>
-  <button class="toggle" onclick="document.body.classList.toggle('light');document.body.classList.toggle('dark')">◐ Dark / Light</button>
+  <button class="toggle" onclick="cheatToggle()">◐ Dark / Light</button>
 </header>
 
 <section><div class="sec" style="--c:var(--blue)">Foundations — the building blocks</div><div class="grid">
@@ -128,4 +128,4 @@
 </div></section>
 
 <footer><span>© 2026 AI Institute Silicon Valley · AI Vocabulary Cheatsheet v1.1-beta</span><span>Maintained separately from the course — updated as the field moves. One of several AIISV reference cards.</span></footer>
-</div></body></html>
+</div><script>window.cheatToggle=function(){var l=document.body.classList.toggle("light");document.body.classList.toggle("dark",!l);try{localStorage.setItem("aiisv-theme",l?"light":"dark")}catch(e){}};document.addEventListener("keydown",function(e){if((e.key==="t"||e.key==="T")&&!e.metaKey&&!e.ctrlKey&&!e.altKey){var el=document.activeElement;if(el&&/input|textarea/i.test(el.tagName))return;window.cheatToggle();}});</script></body></html>
